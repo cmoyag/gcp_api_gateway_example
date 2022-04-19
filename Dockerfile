@@ -11,7 +11,7 @@ WORKDIR $APP_HOME
 COPY . ./
 
 # Install production dependencies.
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup. Here we use the uvicorn
-CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "$PORT"]
+CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8080"]
