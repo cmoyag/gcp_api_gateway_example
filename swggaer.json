@@ -1,0 +1,83 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API REST EN PYTHON",
+    "description": "Get the name of an airport from its three-letter IATA code.",
+    "version": "1.0.0"
+  },
+  "host": "api.softlution-1342.cloud.goog",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "token_service-account1": {
+      "authorizationUrl": "",
+      "flow": "implicit",
+      "type": "oauth2",
+      "x-google-issuer": "jwt-api-v1@softlution-1342.iam.gserviceaccount.com",
+      "x-google-jwks_uri": "https://www.googleapis.com/robot/v1/metadata/x509/jwt-api-v1@softlution-1342.iam.gserviceaccount.com"
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/hola": {
+      "get": {
+        "description": "Ruta de Inicio Hola Mundo.",
+        "operationId": "hola",
+        "x-google-backend": {
+          "address": "https://api-rest-v1-ytbs437aaa-uc.a.run.app"
+        },
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "description": "Servicio no disponible."
+          }
+        },
+        "security": [
+          {
+            "token_service-account1": [],
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/lista": {
+      "get": {
+        "description": "Elementos de la lista ",
+        "operationId": "lista",
+        "x-google-backend": {
+          "address": "https://api-rest-v1-ytbs437aaa-uc.a.run.app/lista"
+        },
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "description": "Servicio no disponible."
+          }
+        },
+        "security": [
+          {
+            "token_service-account1": [],
+            "api_key": []
+          }
+        ]
+      }
+    }
+  }
+}
