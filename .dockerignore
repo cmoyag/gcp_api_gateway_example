@@ -5,4 +5,5 @@ READMreadme.txt
 *.pyd
 __pycache__
 .pytest_cache}
-cliente
+cliente.py
+swggaer.json
